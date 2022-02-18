@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Design by foolishdeveloper.com -->
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+        
+        body {
+            background: url("/css/lapbg1.jpg");
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+        }
+        
+        form {
+            width: 500px;
+            background-color: rgba(177, 176, 176, 0.13);
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 10px 35px;
+        }
+        
+        form * {
+            font-family: 'Poppins', sans-serif;
+            color: #000;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+        
+        form h3 {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 42px;
+            text-align: center;
+        }
+        
+        label {
+            display: block;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        input {
+            display: block;
+            height: 50px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 3px;
+            padding: 0 10px;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        
+         ::placeholder {
+            color: grey;
+        }
+        
+        .button {
+            margin-top: 50px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.27);
+            color: #080710;
+            padding: 5px 10px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .button:hover {
+            text-decoration: none;
+            color: whitesmoke;
+            background: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <form th:action="@{/registration}" method="post" th:object="${user}">
+        <div th:if="${param.success}">
+            <div class="alert alert-info">You've successfully registered!!!</div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="name">Name </label>
+            <input placeholder="Enter name" id="name" class="form-control" th:field="*{name}" required autofocus="autofocus" />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="number"> Mobile number </label>
+            <input placeholder="Enter mobile number" id="number" class="form-control" th:field="*{number}" required autofocus="autofocus" />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="email"> Email </label>
+            <input placeholder="Enter email" id="email" class="form-control" th:field="*{email}" required autofocus="autofocus" />
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label" for="address"> Address </label>
+            <input placeholder="Enter address" id="address" class="form-control" th:field="*{address}" required autofocus="autofocus" />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="password"> Password </label>
+            <input placeholder="Enter password" id="password" class="form-control" type="password" th:field="*{password}" required autofocus="autofocus" />
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Register</button>
+            <br><br>
+            <span>Already registered? <a href="/" th:href="@{/login}" class="button">Login</a></span>
+        </div>
+    </form>
+</body>
+
+</html>

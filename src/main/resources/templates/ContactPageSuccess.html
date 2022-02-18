@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+</head>
+
+<body>
+
+    <nav class="nav-bar">
+        <label class="logo">shoppyTech..</label>
+        <ul>
+            <li><a th:href="@{/homePage}" href="Home.html" class="active">Home  <i class="fas fa-home"></i></a></li>
+            <li><a th:href="@{/aboutPage}" href="About.html">About  <i class="fas fa-address-card"></i></a></li>
+            <li><a th:href="@{/contactPage}" href="Contact.html">Contact  <i class="far fa-address-book"></i></a></li>
+            <li><a th:href="@{/categoriesPage}" href="Categories.html">Categories  <i class="fas fa-border-all"></i></a></li>
+			<li><a th:href="@{/showCart}">Cart  <i class="fas fa-shopping-cart"></i></a></li>
+			<li><a th:href="@{/showWishList}">Wish  <i class="fas fa-heart"></i></a></li>
+			<li><a th:href="@{/showOrdersList}">Orders  <i class="fas fa-check"></i></a></li>
+            <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout  <i class="fas fa-sign-out-alt"></i></a></li>
+        </ul>
+    </nav>
+
+    <!--Section: Contact v.2-->
+    <section class="mb-4 contact">
+
+        <!--Section heading-->
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+        <!--Section description-->
+        <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of hours to help you.</p>
+
+        
+		<center class="contactSuccess">
+			<h1>Your query has been received successfully!!!</h1>
+			<p>Our team will come back to you within a matter of hours to help you</p>
+		</center>
+    </section>
+    <!--Section: Contact v.2-->
+
+
+
+</body>
+
+</html>
