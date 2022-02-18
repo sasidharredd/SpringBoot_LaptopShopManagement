@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <title>Check out page</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: rgb(217, 235, 243);
+        }
+        
+        .container {
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            padding-bottom: 30px;
+            width: 500px;
+            border: 1.5px solid grey;
+            border-radius: 5px;
+            background: #fff;
+        }
+        
+        .thank {
+            font-size: 24px;
+            margin: 20px 100px;
+        }
+        
+        .outer {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .userDetails {
+            margin-left: 20px;
+        }
+        
+        .userDetails p {
+            padding: 5px;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 30px;
+        }
+        
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        h2 {
+            margin-top: 30px;
+        }
+        
+        .back-ctr {
+            color: white;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back-ctr">
+        <a th:href="@{/homePage}"><i class="fas fa-arrow-left"></i> Back to Shopping</a>
+    </div>
+    <div class="container">
+        <p class="thank">Thanks for using our App!!!</p>
+        <div class="outer">
+            <div class="userDetails" th:each="product : ${user}">
+                <p th:inline="text">Name : [[${product.name}]]</p>
+                <p th:inline="text">Number : [[${product.number}]]</p>
+                <p th:inline="text">Address : [[${product.address}]].</p>
+            </div>
+            <div class="userDetails" th:each="product : ${user}">
+                <p>shoppyTech...</p>
+                <p>Number : 9876543211</p>
+                <p>Address : Bangalore, India.</p>
+            </div>
+        </div>
+        <table>
+            <tr>
+                <th>Product Id</th>
+                <th>Product</th>
+                <th>Amount</th>
+            </tr>
+            <tr th:each="product : ${products}">
+                <td th:inline="text">[[${product.id}]]</td>
+                <td th:inline="text">[[${product.name}]]</td>
+                <td th:inline="text">₹ [[${product.price}]]</td>
+            </tr>
+            <tr>
+                <td></td>
+                <th>Total</th>
+                <th th:inline="text">₹ [[${total}]]</th>
+            </tr>
+        </table>
+
+    </div>
+
+
+</body>
+
+</html>

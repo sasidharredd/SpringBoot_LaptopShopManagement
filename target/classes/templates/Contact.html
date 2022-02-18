@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <style>
+    body{
+    		background: rgb(239, 246, 248);
+    	}
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav-bar">
+        <label class="logo">shoppyTech..</label>
+        <ul>
+            <li><a th:href="@{/homePage}" href="Home.html" class="active">Home  <i class="fas fa-home"></i></a></li>
+            <li><a th:href="@{/aboutPage}" href="About.html">About  <i class="fas fa-address-card"></i></a></li>
+            <li><a th:href="@{/contactPage}" href="Contact.html">Contact  <i class="far fa-address-book"></i></a></li>
+            <li><a th:href="@{/categoriesPage}" href="Categories.html">Categories  <i class="fas fa-border-all"></i></a></li>
+			<li><a th:href="@{/showCart}">Cart  <i class="fas fa-shopping-cart"></i></a></li>
+			<li><a th:href="@{/showWishList}">Wish  <i class="fas fa-heart"></i></a></li>
+			<li><a th:href="@{/showOrdersList}">Orders  <i class="fas fa-check"></i></a></li>
+            <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout  <i class="fas fa-sign-out-alt"></i></a></li>
+        </ul>
+    </nav>
+
+    <!--Section: Contact v.2-->
+    <section class="mb-4 contact">
+
+        <!--Section heading-->
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+        <!--Section description-->
+        <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of hours to help you.</p>
+
+        <div class="row contact-inner">
+
+            <!--Grid column-->
+            <div class="col-md-6 mb-md-0 mb-5">
+                <form id="contact-form" name="contact-form" th:action="@{/ContactPageSuccess}">
+
+                    <!--Grid row-->
+                    <div class="row">
+
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <label for="name" class="">Your name</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <label for="email" class="">Your email</label>
+                                <input type="text" id="email" name="email" class="form-control" required>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form mb-0">
+                                <label for="subject" class="">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row">
+
+                        <!--Grid column-->
+                        <div class="col-md-12">
+
+                            <div class="md-form">
+                                <label for="message">Your message</label>
+                                <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--Grid row-->
+                    <div class="text-center text-md-left sendbtn">
+                    	<button  class="btn btn-primary" type="submit">Send</button>
+                	</div>
+
+                </form>
+
+                
+            </div>
+            <!--Grid column th:href="@{/ContactPageSuccess}"-->
+
+            <!--Grid column-->
+            <div class="col-md-3 text-center inner2">
+                <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-map-marker-alt" ></i>
+                        <p>Bangalore, India.</p>
+                    </li>
+
+                    <li><i class="fas fa-phone mt-4"></i>
+                        <p>+91 9876543211</p>
+                    </li>
+                    <li><i class="fas fa-tty mt-4"></i>
+                        <p>04232 9876543</p>
+                    </li>
+
+                    <li><i class="fas fa-envelope mt-4"></i>
+                        <p>contactus@lapcraft.com</p>
+                    </li>
+                </ul>
+            </div>
+            <!--Grid column-->
+
+        </div>
+
+    </section>
+    <!--Section: Contact v.2-->
+
+
+
+</body>
+
+</html>
